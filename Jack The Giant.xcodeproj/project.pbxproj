@@ -65,6 +65,12 @@
 		B88183741EEBF9F600D5BEAA /* Player.atlas in Resources */ = {isa = PBXBuildFile; fileRef = B88183731EEBF9F600D5BEAA /* Player.atlas */; };
 		B88183771EF3AE4900D5BEAA /* BGClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88183761EF3AE4900D5BEAA /* BGClass.swift */; };
 		B881837A1EF3B21300D5BEAA /* CloudsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88183791EF3B21300D5BEAA /* CloudsController.swift */; };
+		B881837C1EF3F5E100D5BEAA /* MainMenu.sks in Resources */ = {isa = PBXBuildFile; fileRef = B881837B1EF3F5E100D5BEAA /* MainMenu.sks */; };
+		B881837E1EF3FADB00D5BEAA /* MainMenuScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B881837D1EF3FADB00D5BEAA /* MainMenuScene.swift */; };
+		B88183801EF3FDB700D5BEAA /* HighScoreScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B881837F1EF3FDB700D5BEAA /* HighScoreScene.sks */; };
+		B88183821EF4004B00D5BEAA /* OptionsScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = B88183811EF4004B00D5BEAA /* OptionsScene.sks */; };
+		B88183841EF401EE00D5BEAA /* HighScoreScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88183831EF401EE00D5BEAA /* HighScoreScene.swift */; };
+		B88183861EF4022A00D5BEAA /* OptionsScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = B88183851EF4022A00D5BEAA /* OptionsScene.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -149,6 +155,12 @@
 		B88183731EEBF9F600D5BEAA /* Player.atlas */ = {isa = PBXFileReference; lastKnownFileType = folder.skatlas; path = Player.atlas; sourceTree = "<group>"; };
 		B88183761EF3AE4900D5BEAA /* BGClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BGClass.swift; sourceTree = "<group>"; };
 		B88183791EF3B21300D5BEAA /* CloudsController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CloudsController.swift; sourceTree = "<group>"; };
+		B881837B1EF3F5E100D5BEAA /* MainMenu.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = MainMenu.sks; sourceTree = "<group>"; };
+		B881837D1EF3FADB00D5BEAA /* MainMenuScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainMenuScene.swift; sourceTree = "<group>"; };
+		B881837F1EF3FDB700D5BEAA /* HighScoreScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = HighScoreScene.sks; sourceTree = "<group>"; };
+		B88183811EF4004B00D5BEAA /* OptionsScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = OptionsScene.sks; sourceTree = "<group>"; };
+		B88183831EF401EE00D5BEAA /* HighScoreScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HighScoreScene.swift; sourceTree = "<group>"; };
+		B88183851EF4022A00D5BEAA /* OptionsScene.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OptionsScene.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +388,9 @@
 			isa = PBXGroup;
 			children = (
 				B881836A1EEBE3E800D5BEAA /* GameplayScene.sks */,
+				B881837B1EF3F5E100D5BEAA /* MainMenu.sks */,
+				B881837F1EF3FDB700D5BEAA /* HighScoreScene.sks */,
+				B88183811EF4004B00D5BEAA /* OptionsScene.sks */,
 			);
 			name = Scenes;
 			sourceTree = "<group>";
@@ -395,6 +410,9 @@
 			isa = PBXGroup;
 			children = (
 				B881836E1EEBEA6E00D5BEAA /* GameplayScene.swift */,
+				B881837D1EF3FADB00D5BEAA /* MainMenuScene.swift */,
+				B88183831EF401EE00D5BEAA /* HighScoreScene.swift */,
+				B88183851EF4022A00D5BEAA /* OptionsScene.swift */,
 			);
 			name = "Scene Classes";
 			sourceTree = "<group>";
@@ -553,7 +571,9 @@
 				B88183511EEBE39400D5BEAA /* Dark Cloud.png in Resources */,
 				B88183571EEBE39400D5BEAA /* Game BG.png in Resources */,
 				B881834B1EEBE39400D5BEAA /* Player 6.png in Resources */,
+				B881837C1EF3F5E100D5BEAA /* MainMenu.sks in Resources */,
 				B88183441EEBE39400D5BEAA /* Life.png in Resources */,
+				B88183821EF4004B00D5BEAA /* OptionsScene.sks in Resources */,
 				B88183601EEBE39400D5BEAA /* Easy Button.png in Resources */,
 				B88183651EEBE39400D5BEAA /* Music On Button.png in Resources */,
 				B88183741EEBF9F600D5BEAA /* Player.atlas in Resources */,
@@ -576,6 +596,7 @@
 				B88183661EEBE39400D5BEAA /* Options Button.png in Resources */,
 				B881834F1EEBE39400D5BEAA /* Cloud 2.png in Resources */,
 				B881834E1EEBE39400D5BEAA /* Cloud 1.png in Resources */,
+				B88183801EF3FDB700D5BEAA /* HighScoreScene.sks in Resources */,
 				B881835A1EEBE39400D5BEAA /* Options BG.png in Resources */,
 				B881836B1EEBE3E800D5BEAA /* GameplayScene.sks in Resources */,
 				B88182DA1EEBE32700D5BEAA /* Actions.sks in Resources */,
@@ -606,9 +627,12 @@
 				B881836F1EEBEA6E00D5BEAA /* GameplayScene.swift in Sources */,
 				B881837A1EF3B21300D5BEAA /* CloudsController.swift in Sources */,
 				B88182DC1EEBE32700D5BEAA /* GameScene.swift in Sources */,
+				B88183861EF4022A00D5BEAA /* OptionsScene.swift in Sources */,
+				B88183841EF401EE00D5BEAA /* HighScoreScene.swift in Sources */,
 				B88182DE1EEBE32700D5BEAA /* GameViewController.swift in Sources */,
 				B88183721EEBF0AA00D5BEAA /* Player.swift in Sources */,
 				B88182D61EEBE32700D5BEAA /* AppDelegate.swift in Sources */,
+				B881837E1EF3FADB00D5BEAA /* MainMenuScene.swift in Sources */,
 				B88183771EF3AE4900D5BEAA /* BGClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -103,6 +103,7 @@ class GameplayScene: SKScene {
         bg3?.moveBG(camera: mainCamera!)
     }
     
+    // Adds clouds continously after initial clouds
     func createNewClouds() {
         
         if cameraDistanceBeforeCreatingNewClouds > (mainCamera?.position.y)! {
