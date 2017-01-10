@@ -26,7 +26,7 @@ class MainMenuScene: SKScene {
             
             // Go to the Game
             if nodes(at: location)[0].name == "Start Game"{
-                let scene = HighScoreScene(fileNamed: "GameplayScene")
+                let scene = GameplayScene(fileNamed: "GameplayScene")
                 scene!.scaleMode = .aspectFill
                 
                 self.view?.presentScene(scene!, transition: SKTransition.doorsCloseVertical(withDuration: 1))
