@@ -233,9 +233,9 @@
 			isa = PBXGroup;
 			children = (
 				B88183731EEBF9F600D5BEAA /* Player.atlas */,
+				B88183131EEBE39400D5BEAA /* Player */,
 				B881830A1EEBE39400D5BEAA /* 1 - Pause Panel And Buttons */,
 				B881830F1EEBE39400D5BEAA /* 2 - Collectables */,
-				B88183131EEBE39400D5BEAA /* 3 - Player */,
 				B881831C1EEBE39400D5BEAA /* 4 - Clouds */,
 				B88183211EEBE39400D5BEAA /* 5 - Fonts */,
 				B88183231EEBE39400D5BEAA /* 6 - Music */,
@@ -266,7 +266,7 @@
 			path = "2 - Collectables";
 			sourceTree = "<group>";
 		};
-		B88183131EEBE39400D5BEAA /* 3 - Player */ = {
+		B88183131EEBE39400D5BEAA /* Player */ = {
 			isa = PBXGroup;
 			children = (
 				B88183141EEBE39400D5BEAA /* Player 1.png */,
@@ -278,6 +278,7 @@
 				B881831A1EEBE39400D5BEAA /* Player 7.png */,
 				B881831B1EEBE39400D5BEAA /* Player 8.png */,
 			);
+			name = Player;
 			path = "3 - Player";
 			sourceTree = "<group>";
 		};

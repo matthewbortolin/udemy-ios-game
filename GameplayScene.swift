@@ -28,6 +28,7 @@ class GameplayScene: SKScene {
         managePlayer()
     }
     
+    // When touch to screen has started
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         
         for touch in touches {
@@ -35,16 +36,17 @@ class GameplayScene: SKScene {
             
             if location.x > center! {
                 moveLeft = false
-                player?.animatePlayer()
+                player?.animatePlayer(moveLeft: moveLeft)
             } else {
                 moveLeft = true
-                player?.animatePlayer()
+                player?.animatePlayer(moveLeft: moveLeft)
             }
         }
         
         canMove = true
     }
     
+    // When touch to the screen has finished
     override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         canMove = false
         player?.stopPlayerAnimation()

@@ -27,18 +27,29 @@ class Player: SKSpriteNode {
         }
     
     // Start Player animation
-    func animatePlayer() {
+    func animatePlayer(moveLeft: Bool) {
+        
+        // Changes direction of player
+        if moveLeft {
+            self.xScale = -fabs(self.xScale)
+        } else {
+            self.xScale = fabs(self.xScale)
+        }
+        
         self.run(SKAction.repeatForever(animatePlayerAction),withKey: "Animate")
     }
     
-    // Stop Player animation
+    // Stop Player animation, return back to idle animation and resize
     func stopPlayerAnimation() {
         self.removeAction(forKey: "Animate")
+        self.texture = SKTexture(imageNamed: "Player 1")
+        self.size = (self.texture?.size())!
     }
     
     // Move player
     func movePlayer(moveLeft: Bool) {
         
+        // if is true moves left otherwise moves right
         if moveLeft {
             self.position.x = self.position.x - 7
         } else {
