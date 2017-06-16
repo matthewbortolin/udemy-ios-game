@@ -8,6 +8,13 @@
 
 import SpriteKit
 
+// For collision bodies
+struct ColliderType {
+    static let Player: UInt32 = 0
+    static let Cloud: UInt32 = 1
+    static let DarkCloudAndCollectibles: UInt32 = 2
+}
+
 class Player: SKSpriteNode {
     
     private var textureAtlas = SKTextureAtlas()
@@ -23,8 +30,19 @@ class Player: SKSpriteNode {
             let name = "Player \(i)"
             playerAnimation.append(SKTexture(imageNamed: name))
         }
+        
         animatePlayerAction = SKAction.animate(with: playerAnimation, timePerFrame: 0.08, resize: true, restore: false)
-        }
+
+        // Physics bodies for player
+        self.physicsBody = SKPhysicsBody(rectangleOf: CGSize(width: self.size.width - 50, height: self.size.height - 5))
+        self.physicsBody?.affectedByGravity = true
+        self.physicsBody?.allowsRotation = false
+        self.physicsBody?.restitution = 0
+        self.physicsBody?.categoryBitMask = ColliderType.Player
+        self.physicsBody?.collisionBitMask = ColliderType.Cloud
+        self.physicsBody?.contactTestBitMask = ColliderType.DarkCloudAndCollectibles
+        
+    }
     
     // Start Player animation
     func animatePlayer(moveLeft: Bool) {
