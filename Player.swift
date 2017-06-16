@@ -51,9 +51,9 @@ class Player: SKSpriteNode {
         
         // if is true moves left otherwise moves right
         if moveLeft {
-            self.position.x = self.position.x - 7
+            self.position.x -= 7
         } else {
-            self.position.x = self.position.x + 7
+            self.position.x += 7
         }
     }
 }
