@@ -26,6 +26,9 @@ class MainMenuScene: SKScene {
             
             // Go to the Game
             if nodes(at: location)[0].name == "Start Game"{
+                
+                GameManager.instance.gameStartedFromMainMenu = true
+                
                 let scene = GameplayScene(fileNamed: "GameplayScene")
                 scene!.scaleMode = .aspectFill
                 

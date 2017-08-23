@@ -4,6 +4,7 @@
 //
 //  Created by Matthew Bortolin on 10/6/17.
 //  Copyright © 2017 Matthew Bortolin. All rights reserved.
+//  Awesome Tutes - udemy.com
 //
 
 import SpriteKit
@@ -106,6 +107,10 @@ class GameplayScene: SKScene {
         
         getBackgrounds()
         
+        getLabels()
+        // initialise score, coins, lives
+        GamePlayController.instance.initialiseVariables()
+        
         cloudsController.arrangeCloudsInScene(scene: self.scene!, distanceBetweenClouds: distanceBetweenClouds, center: center!, minX: minX, maxX: maxX, initialClouds: true)
     
         cameraDistanceBeforeCreatingNewClouds = (mainCamera?.position.y)! - 400
@@ -135,6 +140,13 @@ class GameplayScene: SKScene {
             
             cloudsController.arrangeCloudsInScene(scene: self, distanceBetweenClouds: distanceBetweenClouds, center: center!, minX: minX, maxX: maxX, initialClouds: false)
         }
+    }
+    
+    // Assign Score, Lives, Coins to singleton instance of GamePlayController
+    func getLabels() {
+        GamePlayController.instance.scoreText = self.mainCamera!.childNode(withName: "Score") as? SKLabelNode!
+        GamePlayController.instance.coinText = self.mainCamera!.childNode(withName: "Coin Score") as? SKLabelNode!
+        GamePlayController.instance.lifeText = self.mainCamera!.childNode(withName: "Lives") as? SKLabelNode!
     }
     
     // Pauses game and displays pause panel
