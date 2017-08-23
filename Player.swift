@@ -21,6 +21,9 @@ class Player: SKSpriteNode {
     private var playerAnimation = [SKTexture]()
     private var animatePlayerAction = SKAction()
     
+    // Last position for adjusting score
+    private var lastY = CGFloat()
+    
     // Initialise Player Animations
     func initializePlayerAndAnimations() {
         
@@ -42,6 +45,7 @@ class Player: SKSpriteNode {
         self.physicsBody?.collisionBitMask = ColliderType.Cloud
         self.physicsBody?.contactTestBitMask = ColliderType.DarkCloudAndCollectibles
         
+        lastY = self.position.y
     }
     
     // Start Player animation
@@ -72,6 +76,14 @@ class Player: SKSpriteNode {
             self.position.x -= 7
         } else {
             self.position.x += 7
+        }
+    }
+    
+    // Function for setting the score
+    func setScore() {
+        if self.position.y < lastY {
+            GamePlayController.instance.incrementScore()
+            lastY = self.position.y
         }
     }
 }

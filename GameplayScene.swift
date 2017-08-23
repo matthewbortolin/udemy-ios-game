@@ -9,7 +9,7 @@
 
 import SpriteKit
 
-class GameplayScene: SKScene {
+class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     var cloudsController = CloudsController()
     
@@ -43,6 +43,47 @@ class GameplayScene: SKScene {
         managePlayer()
         manageBackgrounds()
         createNewClouds()
+        player?.setScore()
+    }
+    
+    func didBegin(_ contact: SKPhysicsContact) {
+        
+        var firstBody = SKPhysicsBody()
+        var secondBody = SKPhysicsBody()
+        
+        if contact.bodyA.node?.name == "Player" {
+            firstBody = contact.bodyA
+            secondBody = contact.bodyB
+            
+        } else {
+            firstBody = contact.bodyB
+            secondBody = contact.bodyA
+        }
+        
+        if firstBody.node?.name == "Player" && secondBody.node?.name == "Life" {
+            
+            // Play the sound for the life
+            
+            // Increment the life
+            GamePlayController.instance.incrementLives()
+            
+            // Remove from the screen
+            secondBody.node?.removeFromParent()
+            
+        } else if firstBody.node?.name == "Player" && secondBody.node?.name == "Coin" {
+            
+            // Play the sound for the coin
+            // Increment the coins
+            GamePlayController.instance.incrementCoins()
+            
+            // Remove from the screen
+            secondBody.node?.removeFromParent()
+            
+        } else if firstBody.node?.name == "Player" && secondBody.node?.name == "Dark Cloud" {
+            
+            // Kill the player
+        }
+
     }
     
     // When touch to screen has started
@@ -98,6 +139,9 @@ class GameplayScene: SKScene {
     }
     
     func initializeVariables() {
+        
+        physicsWorld.contactDelegate = self
+        
         center = (self.scene?.size.width)! / (self.scene?.size.height)!
         
         player = self.childNode(withName: "Player") as? Player!
@@ -108,6 +152,7 @@ class GameplayScene: SKScene {
         getBackgrounds()
         
         getLabels()
+        
         // initialise score, coins, lives
         GamePlayController.instance.initialiseVariables()
         
