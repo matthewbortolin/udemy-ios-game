@@ -18,11 +18,14 @@ class CollectablesController {
             
             if GamePlayController.instance.lives! < 2 {
                 
-                // Spawn a life
+                // Spawn a life if lives are less than 2
                 collectable = SKSpriteNode(imageNamed: "Life")
                 collectable.name = "Life"
                 collectable.physicsBody = SKPhysicsBody(rectangleOf: collectable.size)
+            } else {
+                collectable.name = "Empty"
             }
+            
         } else {
             
             // Spawn a coin

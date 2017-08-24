@@ -26,6 +26,10 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
     
     var center: CGFloat?
     
+    // Outof bounds left and right
+    private let playerMinX = CGFloat(-214)
+    private let playerMaxX = CGFloat(214)
+    
     private var cameraDistanceBeforeCreatingNewClouds = CGFloat()
     
     let distanceBetweenClouds = CGFloat(240)
@@ -161,9 +165,30 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
         cameraDistanceBeforeCreatingNewClouds = (mainCamera?.position.y)! - 400
     }
     
+    // Moves player and checks out of bounds
     func managePlayer() {
         if canMove {
             player?.movePlayer(moveLeft: moveLeft)
+        }
+        
+        // Out of bounds right
+        if (player?.position.x)! > playerMaxX {
+            player?.position.x = playerMaxX
+        }
+        
+        // Out of bounds left
+        if (player?.position.x)! < playerMinX {
+            player?.position.x = playerMinX
+        }
+
+        // Out of bounds up
+        if (player?.position.y)! - (player?.size.height)! * 3.7 > (mainCamera?.position.y)! {
+            
+        }
+        
+        // Out of bounds down
+        if (player?.position.y)! + (player?.size.height)! * 3.7 < (mainCamera?.position.y)! {
+            
         }
     }
     
@@ -184,6 +209,21 @@ class GameplayScene: SKScene, SKPhysicsContactDelegate {
             cameraDistanceBeforeCreatingNewClouds = (mainCamera?.position.y)! - 400
             
             cloudsController.arrangeCloudsInScene(scene: self, distanceBetweenClouds: distanceBetweenClouds, center: center!, minX: minX, maxX: maxX, initialClouds: false)
+        }
+    }
+    
+    // Removes elements from parent if out of screen except for background
+    func checkForChildrenOutOfScreen() {
+        
+        for child in children {
+            if child.position.y > (mainCamera?.position.y)! + (self.scene?.size.height)! {
+                
+                let childname = child.name?.components(separatedBy: " ")
+                
+                if childname![0] != "BG" {
+                    child.removeFromParent()
+                }
+            }
         }
     }
     
